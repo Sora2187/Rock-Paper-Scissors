@@ -1,7 +1,8 @@
 const R = "Rock";
 const P = "Paper";
 const S = "Scissors";
-
+let playerScore = 0;
+let comScore = 0;
 // Computer choice logic
 const getComChoice = () => {
   let choice = Math.floor(Math.random() * 2) + 1;
