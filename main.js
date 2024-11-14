@@ -4,7 +4,7 @@ const S = "Scissors";
 
 // Computer choice logic
 const getComChoice = () => {
-  let choice = Math.round(Math.random() * 2) + 1;
+  let choice = Math.floor(Math.random() * 2) + 1;
   return choice === 1 ? R : choice === 2 ? P : S;
 };
 
