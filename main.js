@@ -72,3 +72,14 @@ const playGame = () => {
 };
 
 console.log(playGame());
+
+// Play again feature
+let playAgain;
+
+playAgain = prompt("Do you wanna play again?");
+
+if (playAgain.toLowerCase() === "yes") {
+  console.log(playGame());
+} else {
+  console.log("see you next time then!");
+}
