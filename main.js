@@ -1,8 +1,16 @@
+// Rules for winning
+const rules = {
+  Rock: "Scissors",
+  Paper: "Rock",
+  Scissors: "Paper",
+};
+
 const R = "Rock";
 const P = "Paper";
 const S = "Scissors";
 let playerScore = 0;
 let comScore = 0;
+
 // Computer choice logic
 const getComChoice = () => {
   let choice = Math.floor(Math.random() * 2) + 1;
@@ -26,3 +34,10 @@ const getPlayerChoice = () => {
 };
 
 console.log(getPlayerChoice());
+
+// Round logic to declare a winner or a loser
+const playRound = (playerChoice, comChoice) => {
+  return console.log(playerChoice, comChoice);
+};
+
+playRound(getPlayerChoice(), getComChoice());
