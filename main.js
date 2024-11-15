@@ -1,3 +1,9 @@
+const R = "Rock";
+const P = "Paper";
+const S = "Scissors";
+let playerScore = 0;
+let comScore = 0;
+
 // Rules for winning
 const rules = {
   Rock: "Scissors",
@@ -5,39 +11,31 @@ const rules = {
   Scissors: "Paper",
 };
 
-const R = "Rock";
-const P = "Paper";
-const S = "Scissors";
-let playerScore = 0;
-let comScore = 0;
-
 // Computer choice logic
 const getComChoice = () => {
-  let choice = Math.floor(Math.random() * 2) + 1;
-  return choice === 1 ? R : choice === 2 ? P : S;
+  let choice = Math.floor(Math.random() * 3);
+  return choice === 0 ? R : choice === 1 ? P : S;
 };
-
-console.log(getComChoice());
 
 // Player choice
 const getPlayerChoice = () => {
-  let choice = parseInt(
-    prompt("Choose either rock(1), papers(2) or scissors(3): ")
-  );
-  return choice === 1
-    ? R
-    : choice === 2
-    ? P
-    : choice === 3
-    ? S
-    : console.log("Please either choose 1, 2 or 3");
+  let choice;
+  do {
+    choice = parseInt(
+      prompt("Choose either rock(1), papers(2) or scissors(3): ")
+    );
+  } while (![1, 2, 3].includes(choice));
+  return choice === 1 ? R : choice === 2 ? P : S;
 };
-
-console.log(getPlayerChoice());
 
 // Round logic to declare a winner or a loser
 const playRound = (playerChoice, comChoice) => {
-  return console.log(playerChoice, comChoice);
+  if (playerChoice === comChoice) {
+    return "🤝 The game is a tie!";
+  }
+  return rules[playerChoice] === comChoice
+    ? "🎉 You won the game!"
+    : "😞 You lost the game.";
 };
 
-playRound(getPlayerChoice(), getComChoice());
+console.log(playRound(getPlayerChoice(), getComChoice()));
