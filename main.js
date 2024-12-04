@@ -43,21 +43,21 @@ const playGame = () => {
   let comScore = 0;
   let result;
 
-  let totalRounds;
-  do {
-    totalRounds = parseInt(
-      prompt("Enter the number of Rounds you wanna play: ")
-    );
-  } while (isNaN(totalRounds) || totalRounds <= 0);
+  // let totalRounds;
+  // do {
+  //   totalRounds = parseInt(
+  //     prompt("Enter the number of Rounds you wanna play: ")
+  //   );
+  // } while (isNaN(totalRounds) || totalRounds <= 0);
 
-  for (let round = 1; round <= totalRounds; round++) {
-    result = playRound(getPlayerChoice(), getComChoice());
-    if (result === "🎉 You won the game!") {
-      playerScore++;
-    } else if (result === "😞 You lost the game.") {
-      comScore++;
-    }
-  }
+  // for (let round = 1; round <= totalRounds; round++) {
+  //   result = playRound(getPlayerChoice(), getComChoice());
+  //   if (result === "🎉 You won the game!") {
+  //     playerScore++;
+  //   } else if (result === "😞 You lost the game.") {
+  //     comScore++;
+  //   }
+  // }
 
   // Show output
   console.log(
@@ -74,12 +74,12 @@ const playGame = () => {
 console.log(playGame());
 
 // Play again feature
-let playAgain;
+// let playAgain;
 
-playAgain = prompt("Do you wanna play again?");
+// playAgain = prompt("Do you wanna play again?");
 
-if (playAgain.toLowerCase() === "yes") {
-  console.log(playGame());
-} else {
-  console.log("see you next time then!");
-}
+// if (playAgain.toLowerCase() === "yes") {
+//   console.log(playGame());
+// } else {
+//   console.log("see you next time then!");
+// }
