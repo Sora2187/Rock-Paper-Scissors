@@ -1,6 +1,30 @@
 const R = "Rock";
 const P = "Paper";
 const S = "Scissors";
+const btn1 = document.querySelector("#rock-btn");
+const btn2 = document.querySelector("#paper-btn");
+const btn3 = document.querySelector("#scissors-btn");
+let playerChoice;
+
+// Buttons to decide player choice
+btn1.addEventListener("click", () => {
+  playerChoice = "Rock";
+  console.log("You pressed rock!");
+  console.log(playerChoice);
+  console.log(playRound(playerChoice, getComChoice()));
+});
+btn2.addEventListener("click", () => {
+  playerChoice = "Paper";
+  console.log("You pressed paper!");
+  console.log(playerChoice);
+  console.log(playRound(playerChoice, getComChoice()));
+});
+btn3.addEventListener("click", () => {
+  playerChoice = "Scissors";
+  console.log("You pressed scissor!");
+  console.log(playerChoice);
+  console.log(playRound(playerChoice, getComChoice()));
+});
 
 // Rules for winning
 const rules = {
@@ -15,33 +39,21 @@ const getComChoice = () => {
   return choice === 0 ? R : choice === 1 ? P : S;
 };
 
-// Player choice
-const getPlayerChoice = () => {
-  let choice;
-  do {
-    choice = parseInt(
-      prompt("Choose either rock(1), papers(2) or scissors(3): ")
-    );
-  } while (![1, 2, 3].includes(choice));
-  return choice === 1 ? R : choice === 2 ? P : S;
-};
-
 // Round logic to declare a round winner or a round loser
-const playRound = (playerChoice, comChoice) => {
-  if (playerChoice === comChoice) {
+const playRound = (pChoice, comChoice) => {
+  if (pChoice === comChoice) {
     return "🤝 The game is a tie!";
   }
-  return rules[playerChoice] === comChoice
+  return rules[pChoice] === comChoice
     ? "🎉 You won the game!"
     : "😞 You lost the game.";
 };
-
 // Store score logic after a round win or loss
 
 const playGame = () => {
   let playerScore = 0;
   let comScore = 0;
-  let result;
+  // let result;
 
   // let totalRounds;
   // do {
@@ -60,18 +72,18 @@ const playGame = () => {
   // }
 
   // Show output
-  console.log(
-    `Your final score was ${playerScore} and enemy score was ${comScore}`
-  );
-  if (playerScore > comScore) {
-    return "Congrats you won the game!";
-  } else if (comScore > playerScore) {
-    return "Sorry, you lost the game";
-  }
-  return "GGs, game tied";
+  // console.log(
+  //   `Your final score was ${playerScore} and enemy score was ${comScore}`
+  // );
+  // if (playerScore > comScore) {
+  //   return "Congrats you won the game!";
+  // } else if (comScore > playerScore) {
+  //   return "Sorry, you lost the game";
+  // }
+  // return "GGs, game tied";
 };
 
-console.log(playGame());
+// console.log(playGame());
 
 // Play again feature
 // let playAgain;
