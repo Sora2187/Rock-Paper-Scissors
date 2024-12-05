@@ -4,26 +4,31 @@ const S = "Scissors";
 const btn1 = document.querySelector("#rock-btn");
 const btn2 = document.querySelector("#paper-btn");
 const btn3 = document.querySelector("#scissors-btn");
+const div = document.querySelector("#results");
 let playerChoice;
+
+// Code to display results using DOM manipulation
+const result = document.createElement("h2");
+div.appendChild(result);
 
 // Buttons to decide player choice
 btn1.addEventListener("click", () => {
   playerChoice = "Rock";
   console.log("You pressed rock!");
   console.log(playerChoice);
-  console.log(playRound(playerChoice, getComChoice()));
+  result.textContent = playRound(playerChoice, getComChoice());
 });
 btn2.addEventListener("click", () => {
   playerChoice = "Paper";
   console.log("You pressed paper!");
   console.log(playerChoice);
-  console.log(playRound(playerChoice, getComChoice()));
+  result.textContent = playRound(playerChoice, getComChoice());
 });
 btn3.addEventListener("click", () => {
   playerChoice = "Scissors";
   console.log("You pressed scissor!");
   console.log(playerChoice);
-  console.log(playRound(playerChoice, getComChoice()));
+  result.textContent = playRound(playerChoice, getComChoice());
 });
 
 // Rules for winning
@@ -48,40 +53,41 @@ const playRound = (pChoice, comChoice) => {
     ? "🎉 You won the game!"
     : "😞 You lost the game.";
 };
+
 // Store score logic after a round win or loss
 
-const playGame = () => {
-  let playerScore = 0;
-  let comScore = 0;
-  // let result;
+// const playGame = () => {
+//   let playerScore = 0;
+//   let comScore = 0;
+// let result;
 
-  // let totalRounds;
-  // do {
-  //   totalRounds = parseInt(
-  //     prompt("Enter the number of Rounds you wanna play: ")
-  //   );
-  // } while (isNaN(totalRounds) || totalRounds <= 0);
+// let totalRounds;
+// do {
+//   totalRounds = parseInt(
+//     prompt("Enter the number of Rounds you wanna play: ")
+//   );
+// } while (isNaN(totalRounds) || totalRounds <= 0);
 
-  // for (let round = 1; round <= totalRounds; round++) {
-  //   result = playRound(getPlayerChoice(), getComChoice());
-  //   if (result === "🎉 You won the game!") {
-  //     playerScore++;
-  //   } else if (result === "😞 You lost the game.") {
-  //     comScore++;
-  //   }
-  // }
+// for (let round = 1; round <= totalRounds; round++) {
+//   result = playRound(getPlayerChoice(), getComChoice());
+//   if (result === "🎉 You won the game!") {
+//     playerScore++;
+//   } else if (result === "😞 You lost the game.") {
+//     comScore++;
+//   }
+// }
 
-  // Show output
-  // console.log(
-  //   `Your final score was ${playerScore} and enemy score was ${comScore}`
-  // );
-  // if (playerScore > comScore) {
-  //   return "Congrats you won the game!";
-  // } else if (comScore > playerScore) {
-  //   return "Sorry, you lost the game";
-  // }
-  // return "GGs, game tied";
-};
+// Show output
+// console.log(
+//   `Your final score was ${playerScore} and enemy score was ${comScore}`
+// );
+// if (playerScore > comScore) {
+//   return "Congrats you won the game!";
+// } else if (comScore > playerScore) {
+//   return "Sorry, you lost the game";
+// }
+// return "GGs, game tied";
+// };
 
 // console.log(playGame());
 
