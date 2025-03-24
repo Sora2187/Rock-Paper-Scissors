@@ -56,48 +56,52 @@ const playRound = (pChoice, comChoice) => {
 
 // Store score logic after a round win or loss
 
-// const playGame = () => {
-//   let playerScore = 0;
-//   let comScore = 0;
-// let result;
+/** WORK IN PROGRESS
+ 
+const playGame = () => {
+  let playerScore = 0;
+  let comScore = 0;
+  let result;
 
-// let totalRounds;
-// do {
-//   totalRounds = parseInt(
-//     prompt("Enter the number of Rounds you wanna play: ")
-//   );
-// } while (isNaN(totalRounds) || totalRounds <= 0);
+  let totalRounds;
+  do {
+    totalRounds = parseInt(
+      prompt("Enter the number of Rounds you wanna play: ")
+    );
+  } while (isNaN(totalRounds) || totalRounds <= 0);
 
-// for (let round = 1; round <= totalRounds; round++) {
-//   result = playRound(getPlayerChoice(), getComChoice());
-//   if (result === "🎉 You won the game!") {
-//     playerScore++;
-//   } else if (result === "😞 You lost the game.") {
-//     comScore++;
-//   }
-// }
-
-// Show output
-// console.log(
-//   `Your final score was ${playerScore} and enemy score was ${comScore}`
-// );
-// if (playerScore > comScore) {
-//   return "Congrats you won the game!";
-// } else if (comScore > playerScore) {
-//   return "Sorry, you lost the game";
-// }
-// return "GGs, game tied";
-// };
+  for (let round = 1; round <= totalRounds; round++) {
+    result = playRound(playerChoice, getComChoice());
+    if (result === "🎉 You won the game!") {
+      playerScore++;
+    } else if (result === "😞 You lost the game.") {
+      comScore++;
+    }
+  }
+  // Show output
+  console.log(
+    `Your final score was ${playerScore} and enemy score was ${comScore}`
+  );
+  if (playerScore > comScore) {
+    return "Congrats you won the game!";
+  } else if (comScore > playerScore) {
+    return "Sorry, you lost the game";
+  }
+  return "GGs, game tied";
+};
 
 // console.log(playGame());
 
-// Play again feature
-// let playAgain;
+//   // Play again feature
+//   let playAgain;
 
-// playAgain = prompt("Do you wanna play again?");
+//   playAgain = prompt("Do you wanna play again?");
 
-// if (playAgain.toLowerCase() === "yes") {
-//   console.log(playGame());
-// } else {
-//   console.log("see you next time then!");
-// }
+//   if (playAgain.toLowerCase() === "yes") {
+//     console.log(playGame());
+//   } else {
+//     console.log("see you next time then!");
+// };
+
+// playGame();
+ */
